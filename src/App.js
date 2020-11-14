@@ -21,8 +21,8 @@ const App = () => {
 
 	return (
 		<>
+			{isThereAccess ? <Header /> : null}
 			<ConnectedRouter history={history}>
-				{isThereAccess ? <Header /> : null}
 				<Switch>
 					<PublicRoutes path={appPath.betaAccessPage} exact restricted component={BetaAccessPage} />
 					<ProtectedRoutes path={appPath.homePage} exact component={HomePage} />
